@@ -1,4 +1,4 @@
-package edu.cmu.lti.11791.f14.hw3.zexim.casconsumers;
+package edu.cmu.lti.f14.hw3.hw3_zexim.casconsumers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 import org.apache.uima.util.ProcessTrace;
 
-import edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document;
+import edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document;
 
 
 public class RetrievalEvaluator extends CasConsumer_ImplBase {

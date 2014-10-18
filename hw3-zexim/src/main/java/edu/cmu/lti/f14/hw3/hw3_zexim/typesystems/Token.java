@@ -1,7 +1,7 @@
 
 
 /* First created by JCasGen Fri Oct 11 01:58:03 EDT 2013 */
-package edu.cmu.lti.11791.f14.hw3.zexim.typesystems;
+package edu.cmu.lti.f14.hw3.hw3_zexim.typesystems;
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Fri Oct 11 01:58:03 EDT 2013
- * XML source: /home/diwang/ur-workspace/hw3-zexim/src/main/resources/descriptors/typesystems/VectorSpaceTypes.xml
+ * Updated by JCasGen Sat Oct 18 17:55:00 EDT 2014
+ * XML source: /home/kylemao/git/hw3-zexim/hw3-zexim/src/main/resources/descriptors/typesystems/VectorSpaceTypes.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -25,7 +25,9 @@ public class Token extends Annotation {
    */
   @SuppressWarnings ("hiding")
   public final static int type = typeIndexID;
-  /** @generated  */
+  /** @generated
+   * @return index of the type  
+   */
   @Override
   public              int getTypeIndexID() {return typeIndexID;}
  
@@ -34,19 +36,28 @@ public class Token extends Annotation {
   protected Token() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
-   * @generated */
+   * @generated
+   * @param addr low level Feature Structure reference
+   * @param type the type of this Feature Structure 
+   */
   public Token(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
   
-  /** @generated */
+  /** @generated
+   * @param jcas JCas to which this Feature Structure belongs 
+   */
   public Token(JCas jcas) {
     super(jcas);
     readObject();   
   } 
 
-  /** @generated */  
+  /** @generated
+   * @param jcas JCas to which this Feature Structure belongs
+   * @param begin offset to the begin spot in the SofA
+   * @param end offset to the end spot in the SofA 
+  */  
   public Token(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
@@ -54,10 +65,13 @@ public class Token extends Annotation {
     readObject();
   }   
 
-  /** <!-- begin-user-doc -->
-    * Write your own initialization here
-    * <!-- end-user-doc -->
-  @generated modifiable */
+  /** 
+   * <!-- begin-user-doc -->
+   * Write your own initialization here
+   * <!-- end-user-doc -->
+   *
+   * @generated modifiable 
+   */
   private void readObject() {/*default - does nothing empty block */}
      
  
@@ -66,17 +80,21 @@ public class Token extends Annotation {
   //* Feature: text
 
   /** getter for text - gets 
-   * @generated */
+   * @generated
+   * @return value of the feature 
+   */
   public String getText() {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_text == null)
-      jcasType.jcas.throwFeatMissing("text", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Token");
+      jcasType.jcas.throwFeatMissing("text", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Token");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Token_Type)jcasType).casFeatCode_text);}
     
   /** setter for text - sets  
-   * @generated */
+   * @generated
+   * @param v value to set into the feature 
+   */
   public void setText(String v) {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_text == null)
-      jcasType.jcas.throwFeatMissing("text", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Token");
+      jcasType.jcas.throwFeatMissing("text", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Token");
     jcasType.ll_cas.ll_setStringValue(addr, ((Token_Type)jcasType).casFeatCode_text, v);}    
    
     
@@ -84,17 +102,21 @@ public class Token extends Annotation {
   //* Feature: frequency
 
   /** getter for frequency - gets 
-   * @generated */
+   * @generated
+   * @return value of the feature 
+   */
   public int getFrequency() {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequency == null)
-      jcasType.jcas.throwFeatMissing("frequency", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Token");
+      jcasType.jcas.throwFeatMissing("frequency", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Token");
     return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_frequency);}
     
   /** setter for frequency - sets  
-   * @generated */
+   * @generated
+   * @param v value to set into the feature 
+   */
   public void setFrequency(int v) {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequency == null)
-      jcasType.jcas.throwFeatMissing("frequency", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Token");
+      jcasType.jcas.throwFeatMissing("frequency", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Token");
     jcasType.ll_cas.ll_setIntValue(addr, ((Token_Type)jcasType).casFeatCode_frequency, v);}    
   }
 

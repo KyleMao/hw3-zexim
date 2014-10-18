@@ -1,4 +1,4 @@
-package edu.cmu.lti.11791.f14.hw3.zexim.collectionreaders;
+package edu.cmu.lti.f14.hw3.hw3_zexim.collectionreaders;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 
-import edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document;
+import edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document;
 
 
 public class DocumentReader 

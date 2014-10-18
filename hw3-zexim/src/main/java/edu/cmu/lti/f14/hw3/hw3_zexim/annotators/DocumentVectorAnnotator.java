@@ -1,4 +1,4 @@
-package edu.cmu.lti.11791.f14.hw3.zexim.annotators;
+package edu.cmu.lti.f14.hw3.hw3_zexim.annotators;
 
 import java.util.*;
 
@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.IntegerArray;
 import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.jcas.tcas.Annotation;
 
-import edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document;
+import edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document;
 
 public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 

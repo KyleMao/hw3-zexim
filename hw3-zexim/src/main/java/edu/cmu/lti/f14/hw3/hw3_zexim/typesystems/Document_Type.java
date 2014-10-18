@@ -1,6 +1,6 @@
 
 /* First created by JCasGen Fri Oct 11 01:58:03 EDT 2013 */
-package edu.cmu.lti.11791.f14.hw3.zexim.typesystems;
+package edu.cmu.lti.f14.hw3.hw3_zexim.typesystems;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Oct 11 01:58:03 EDT 2013
+ * Updated by JCasGen Sat Oct 18 17:55:00 EDT 2014
  * @generated */
 public class Document_Type extends Annotation_Type {
   /** @generated */
@@ -42,7 +42,7 @@ public class Document_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
  
   /** @generated */
   final Feature casFeat_relevanceValue;
@@ -51,13 +51,13 @@ public class Document_Type extends Annotation_Type {
   /** @generated */ 
   public int getRelevanceValue(int addr) {
         if (featOkTst && casFeat_relevanceValue == null)
-      jcas.throwFeatMissing("relevanceValue", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("relevanceValue", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     return ll_cas.ll_getIntValue(addr, casFeatCode_relevanceValue);
   }
   /** @generated */    
   public void setRelevanceValue(int addr, int v) {
         if (featOkTst && casFeat_relevanceValue == null)
-      jcas.throwFeatMissing("relevanceValue", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("relevanceValue", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     ll_cas.ll_setIntValue(addr, casFeatCode_relevanceValue, v);}
     
   
@@ -69,13 +69,13 @@ public class Document_Type extends Annotation_Type {
   /** @generated */ 
   public int getQueryID(int addr) {
         if (featOkTst && casFeat_queryID == null)
-      jcas.throwFeatMissing("queryID", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("queryID", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     return ll_cas.ll_getIntValue(addr, casFeatCode_queryID);
   }
   /** @generated */    
   public void setQueryID(int addr, int v) {
         if (featOkTst && casFeat_queryID == null)
-      jcas.throwFeatMissing("queryID", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("queryID", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     ll_cas.ll_setIntValue(addr, casFeatCode_queryID, v);}
     
   
@@ -87,13 +87,13 @@ public class Document_Type extends Annotation_Type {
   /** @generated */ 
   public String getText(int addr) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("text", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     return ll_cas.ll_getStringValue(addr, casFeatCode_text);
   }
   /** @generated */    
   public void setText(int addr, String v) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("text", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     ll_cas.ll_setStringValue(addr, casFeatCode_text, v);}
     
   
@@ -105,13 +105,13 @@ public class Document_Type extends Annotation_Type {
   /** @generated */ 
   public int getTokenList(int addr) {
         if (featOkTst && casFeat_tokenList == null)
-      jcas.throwFeatMissing("tokenList", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("tokenList", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     return ll_cas.ll_getRefValue(addr, casFeatCode_tokenList);
   }
   /** @generated */    
   public void setTokenList(int addr, int v) {
         if (featOkTst && casFeat_tokenList == null)
-      jcas.throwFeatMissing("tokenList", "edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document");
+      jcas.throwFeatMissing("tokenList", "edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document");
     ll_cas.ll_setRefValue(addr, casFeatCode_tokenList, v);}
     
   

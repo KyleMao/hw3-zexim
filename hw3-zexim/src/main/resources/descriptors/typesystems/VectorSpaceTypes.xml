@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <name>VectorSpaceTypes</name>
   <description/>
@@ -6,7 +7,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Document</name>
+      <name>edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -34,7 +35,7 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>edu.cmu.lti.11791.f14.hw3.zexim.typesystems.Token</name>
+      <name>edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Token</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
