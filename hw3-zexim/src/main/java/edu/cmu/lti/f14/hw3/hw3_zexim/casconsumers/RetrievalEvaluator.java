@@ -4,7 +4,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -52,6 +51,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
   /** Map from query id to ReportEntry **/
   public Map<Integer, ReportEntry> scoreMap;
 
+  // A private class used to store the things needed for the report
   private class ReportEntry {
     private int index;
 
@@ -110,7 +110,8 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
   }
 
   /**
-   * 1. Construct the global word dictionary 2. Keep the word frequency for each sentence
+   * 1. Construct the global word dictionary
+   * 2. Keep the word frequency for each sentence
    */
   @Override
   public void processCas(CAS aCas) throws ResourceProcessException {
@@ -135,6 +136,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
         docVector.put(token.getText(), token.getFrequency());
       }
 
+      // Store all the information needed
       qIdList.add(doc.getQueryID());
       relList.add(doc.getRelevanceValue());
       textList.add(doc.getText());
@@ -146,8 +148,9 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
   }
 
   /**
-   * 1. Compute Cosine Similarity and rank the retrieved sentences 2. Compute the MRR metric 3.
-   * Generate report.txt
+   * 1. Compute Cosine Similarity and rank the retrieved sentences
+   * 2. Compute the MRR metric
+   * 3. Generate report.txt
    */
   @Override
   public void collectionProcessComplete(ProcessTrace arg0) throws ResourceProcessException,
@@ -222,6 +225,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
   }
 
   /**
+   * Compute the cosine similarity between a query vector and a doc vector
    * 
    * @return cosine_similarity
    */
@@ -231,7 +235,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
     double query_norm = 0.0;
     double doc_norm = 0.0;
 
-    // Compute cosine similarity between two sentences
+    // Compute normalization terms
     for (Integer term_frequency : queryVector.values()) {
       query_norm += term_frequency * term_frequency;
     }
@@ -242,6 +246,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
     }
     doc_norm = Math.sqrt(doc_norm);
 
+    // Compute consine similarity
     Set<String> matchTerms = new HashSet<String>(queryVector.keySet());
     matchTerms.retainAll(docVector.keySet());
     for (String term : matchTerms) {
@@ -254,13 +259,13 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
   }
 
   /**
+   * Compute Mean Reciprocal Rank (MRR) of the text collection
    * 
    * @return mrr
    */
   private double compute_mrr() {
     double metric_mrr = 0.0;
 
-    // Compute Mean Reciprocal Rank (MRR) of the text collection
     for (ReportEntry entry : scoreMap.values()) {
       metric_mrr += (double) entry.getRank() / entry.getAllScores().size();
     }

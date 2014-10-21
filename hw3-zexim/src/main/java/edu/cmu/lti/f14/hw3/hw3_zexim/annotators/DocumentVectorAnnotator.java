@@ -43,15 +43,17 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
   }
 
   /**
+   * Create the sparse term frequency vector for each document.
    * 
    * @param jcas
-   * @param doc
+   * @param doc   A document object, where the text is parsed into a term vector.
    */
 
   private void createTermFreqVector(JCas jcas, Document doc) {
 
     String docText = doc.getText();
     List<String> tokenStrings = tokenize0(docText);
+    // A hash maps is used to count the frequencies for each term in the document
     Map<String, Integer> termFrequency = new HashMap<String, Integer>();
     for (String aTokenString : tokenStrings) {
       if (termFrequency.containsKey(aTokenString)) {
@@ -63,6 +65,7 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
       }
     }
 
+    // Make the token list and add it to the document object
     List<Token> tokenList = new ArrayList<Token>();
     for (Map.Entry<String, Integer> entry : termFrequency.entrySet()) {
       Token aToken = new Token(jcas);
