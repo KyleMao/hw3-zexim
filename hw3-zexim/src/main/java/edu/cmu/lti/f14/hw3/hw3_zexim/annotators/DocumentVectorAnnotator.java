@@ -1,19 +1,54 @@
 package edu.cmu.lti.f14.hw3.hw3_zexim.annotators;
 
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.apache.uima.resource.ResourceInitializationException;
 
 import edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Document;
 import edu.cmu.lti.f14.hw3.hw3_zexim.typesystems.Token;
+import edu.cmu.lti.f14.hw3.hw3_zexim.utils.StanfordLemmatizer;
 import edu.cmu.lti.f14.hw3.hw3_zexim.utils.Utils;
 
 public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 
+  /** Name of configuration parameter that must be set to the path of the output file. **/
+  public static final String PARAM_STOP_WORD_FILE = "StopWordFile";
+  
+  /** Stop words **/
+  public Set<String> stopWordSet;
+  
+  @Override
+  public void initialize(UimaContext aContext) throws ResourceInitializationException {
+    super.initialize(aContext);
+    
+    stopWordSet = new HashSet<String>();
+    try {
+      File inputFile = new File(((String) aContext.getConfigParameterValue(PARAM_STOP_WORD_FILE)).trim());
+      BufferedReader bufferdReader = new BufferedReader(new FileReader(inputFile));
+      for (String word; (word = bufferdReader.readLine()) != null; ) {
+        stopWordSet.add(word);
+      }
+    } catch (IOException e) {
+      System.out.println("Loading storword file failed!");
+    }
+  }
+  
   @Override
   public void process(JCas jcas) throws AnalysisEngineProcessException {
 
@@ -52,7 +87,16 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
   private void createTermFreqVector(JCas jcas, Document doc) {
 
     String docText = doc.getText();
-    List<String> tokenStrings = tokenize0(docText);
+    List<String> tokenStrings = StanfordLemmatizer.tokenize1(docText);
+    
+    // Remove terms in the stop word list.
+    for (Iterator<String> iterator = tokenStrings.iterator(); iterator.hasNext();) {
+      String term = iterator.next();
+      if (stopWordSet.contains(term)) {
+        iterator.remove();
+      }
+    }
+    
     // A hash maps is used to count the frequencies for each term in the document
     Map<String, Integer> termFrequency = new HashMap<String, Integer>();
     for (String aTokenString : tokenStrings) {
