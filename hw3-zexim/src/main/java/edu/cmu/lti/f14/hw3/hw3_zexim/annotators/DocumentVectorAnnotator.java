@@ -44,6 +44,7 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
       for (String word; (word = bufferdReader.readLine()) != null; ) {
         stopWordSet.add(word);
       }
+      bufferdReader.close();
     } catch (IOException e) {
       System.out.println("Loading storword file failed!");
     }
