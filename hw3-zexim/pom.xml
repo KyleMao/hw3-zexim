@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.cmu.lti.11791.f14.hw3</groupId>
 	<artifactId>hw3-zexim</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 
 	<repositories>
 		<repository>
@@ -130,6 +130,6 @@
 	<scm>
 		<connection>scm:git:git@github.com:KyleMao/hw3-zexim.git</connection>
 		<developerConnection>scm:git:git@github.com:KyleMao/hw3-zexim.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>hw3-zexim-0.0.2</tag>
   </scm>
 </project>
