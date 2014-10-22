@@ -18,4 +18,4 @@ consine=0.1508	rank=3	qid=17	rel=1	Corn futures found support from forecasts for
 consine=0.2265	rank=2	qid=18	rel=1	From a single hamburger stand in San Bernardino, Calif., in 1948, the systematized approach that the McDonald brothers developed to offer customers reasonably priced food at a rapid pace formed the cornerstone of the fast-food business. 
 consine=0.1268	rank=3	qid=19	rel=1	On May 6, 1937, the hydrogen-filled German dirigible Hindenburg   burned and crashed in Lakehurst, N.J., killing 35 of the 97 people  on board and a Navy crewman on the ground. 
 consine=0.3078	rank=2	qid=20	rel=1	They call it the Keystone State, and in this unpredictable election year, Pennsylvania is living up to its name. 
-MRR=0.7542
+MRR=0.4375

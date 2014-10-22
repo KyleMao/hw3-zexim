@@ -267,7 +267,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
     double metric_mrr = 0.0;
 
     for (ReportEntry entry : scoreMap.values()) {
-      metric_mrr += (double) entry.getRank() / entry.getAllScores().size();
+      metric_mrr += 1.0 / (double) entry.getRank();
     }
     metric_mrr /= scoreMap.size();
 
